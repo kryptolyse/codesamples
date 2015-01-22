@@ -25,13 +25,19 @@ while position < length:
 		chiffre = chiffre + letter
         #Sonsts (Wenn der Buchstabe ein Alphanumerisches Zeichen ist):
 	else:
-
+                #Finde die Position des Buchstaben im Alphabet.
 		currentletter = alphabet.index(letter.lower())
+                #Berechne die neue Position des Buchstaben (den neuen Buchstaben) indem das mitgegebene offset auf die aktuelle Position addiert wird.
 		newletter = (currentletter + offset) % 26
+                #Gib den Buchstaben zurück, der isch an der neuen Position befindet und speichere ihn in der Variable newl.
 		newl = alphabet[newletter]
+                #Wenn der eingegebene Buchstabe ein Großbuchstabe war...
 		if letter.isupper():
+                        #Soll auch der neu errechnete Buchstabe ein Großbuchstabe sein.
 			newl = newl.upper()
+                #Hänge den so ermittelten Buchstaben hinten an den bisher bestehenden Chiffretext an.
 		chiffre = chiffre + newl 
+            #Um den nächsten eingegebenen Buchstaben zu behandeln, addiere 1 zur Position
 	position = position + 1
-
+#Gib den so entstandenen Chiffretext auf der Konsole aus.
 print chiffre
